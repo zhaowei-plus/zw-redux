@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Apple from './Apple';
 import Orange from './Orange';
 
+import Overlay from './Overlay';
+
 
 /* 姓名，年龄 */
 
@@ -9,6 +11,25 @@ export default class App extends Component {
   constructor(props, context) {
     // 构造函数必须有 super,否则 this 指向会出错
     super(props, context);
+
+    this.state = {
+      overlayActive: false,
+    }
+
+    this.closeOverlay = this.closeOverlay.bind(this);
+    this.showOverlay = this.showOverlay.bind(this);
+  }
+
+  closeOverlay() {
+    this.setState({
+      overlayActive: false,
+    });
+  }
+
+  showOverlay() {
+    this.setState({
+      overlayActive: true,
+    });
   }
 
   /**
@@ -20,6 +41,14 @@ export default class App extends Component {
    */
   componentWillMount() {
     console.log('componentWillMount');
+  }
+
+  /**
+   * 可以捕获自身以及子树伤的错误并对错误做优雅处理，
+   * 包括上报错误日志、展示错误提示，而不是卸载整个组件数
+   * */
+  componentDidCatch(err, info) {
+    console.log('componentDidCatch:', err, info);
   }
 
   /**
@@ -80,7 +109,7 @@ export default class App extends Component {
      * 当render() 方法以来与一些其他数据，可以调用 forceUpdate() 方法重新渲染，此时会跳过 shouldComponentUpdate() 生命周期
      *
      * */
-    this.forceUpdate();
+    // this.forceUpdate();
 
     return (
       <div className="panel panel-default">
@@ -100,6 +129,14 @@ export default class App extends Component {
 
             </div>
           </div>
+        </div>
+
+        <div className="panel-footer">
+          {
+            this.state.overlayActive &&
+            <Overlay onClose={this.closeOverlay()}>overlay content</Overlay>
+          }
+          <button className="btn btn-primary" onClick={this.showOverlay}>show</button>
         </div>
 
       </div>

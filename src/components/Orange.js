@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import FruitList from './FruitList';
 
 import { Header } from '../containers/Header';
 import { Footer } from '../containers/Footer';
 
-export default class Orange extends Component {
-  onClick = () => {
-    console.log('摘橘子')
-  }
+@connect(({ oranges }) => ({
+  oranges,
+}))
+class Orange extends Component {
+  onClick = () => {}
 
   render() {
+    const { oranges } = this.props;
+
     return (
       <div className="panel panel-default">
         <Header title="橘子" />
 
         <div className="panel-body">
-          <FruitList />
+          <FruitList lists={oranges}/>
         </div>
 
         <Footer btnName="摘橘子" onClick={this.onClick} />
@@ -24,3 +27,5 @@ export default class Orange extends Component {
     );
   }
 }
+
+export default Orange;
