@@ -21,7 +21,7 @@ module.exports = {
     env: require('./prod.env'),
     // index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsPublicPath: 'https://sitecdn.zcy.gov.cn/',
+    assetsPublicPath: './', // 打包后的资源路径
     assetsSubDirectory: 'template_assets', // 需修改
     productionSourceMap: true,
     devtool: '#source-map'

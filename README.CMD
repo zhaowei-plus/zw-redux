@@ -115,3 +115,12 @@
     3）Portals - createPortals
     4）支持自定义DOM属性
     5）setState传入null时不会再触发更新
+
+
+12、redux异步处理中间件
+    1）redux-thunk
+    2）redux-saga
+        用于管理redux应用异步操作的中间件，通过创建sagas将所有异步操作逻辑收集在一个地方集中处理，可以用来代替redux-thunk中间件
+
+
+

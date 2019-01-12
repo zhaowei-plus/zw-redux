@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Apple from './Apple';
-import Orange from './Orange';
+import Topics from './Topics';
+import Topic from './Topic';
 
 import Overlay from './Overlay';
-
-
-/* 姓名，年龄 */
 
 export default class App extends Component {
   constructor(props, context) {
@@ -105,40 +102,35 @@ export default class App extends Component {
    * 或者使用Fragment 替换原有的 div
    * */
   render() {
-    /**
-     * 当render() 方法以来与一些其他数据，可以调用 forceUpdate() 方法重新渲染，此时会跳过 shouldComponentUpdate() 生命周期
-     *
-     * */
-    // this.forceUpdate();
-
     return (
       <div className="panel panel-default">
-
-
+        <div className="panel-heading text-center">
+          <h3>社区</h3>
+        </div>
         <div className="panel-body">
           <div className="container">
             <div className="row">
 
               <div className="col-md-6">
-                <Apple />
+                <Topics />
               </div>
 
               <div className="col-md-6">
-                <Orange />
+                <Topic />
               </div>
-
             </div>
           </div>
         </div>
 
-        <div className="panel-footer">
-          {
-            this.state.overlayActive &&
-            <Overlay onClose={this.closeOverlay()}>overlay content</Overlay>
-          }
-          <button className="btn btn-primary" onClick={this.showOverlay}>show</button>
+        <div className="panel-footer text-center">
+          <button className="btn btn-primary" onClick={this.showOverlay}>测试</button>
         </div>
-
+        {
+          this.state.overlayActive &&
+          <Overlay onClose={this.closeOverlay}>
+            这是props.children传递过来的数据信息
+          </Overlay>
+        }
       </div>
     );
   }
