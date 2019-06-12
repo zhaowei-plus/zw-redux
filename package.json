@@ -22,8 +22,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "body-parser": "^1.18.2",
     "bluebird": "^3.5.2",
+    "body-parser": "^1.18.2",
     "chokidar": "^2.0.4",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -41,7 +41,9 @@
     "webpack": "^3.12.0",
     "webpack-dev-middleware": "^2.0.4",
     "webpack-hot-middleware": "^2.21.0",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "yage-npm": "^1.1.0",
+    "zcy-regexpstore-front": "^1.0.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
