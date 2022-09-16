@@ -46,7 +46,7 @@
     "zcy-regexpstore-front": "^1.0.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "eventsource-polyfill": "^0.9.6",
     "expose-loader": "^0.7.5",
     "express": "^4.16.4",
